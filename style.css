@@ -1,0 +1,127 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nanum Brush Script", cursive ;
+    font-weight: 400;
+    font-style: normal; 
+} 
+body
+{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    min-height: 100vh;
+    background: #353935;
+}
+
+.container
+{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4%;
+    flex-direction: column;
+    gap: 30px;
+    background: #8d9b88;
+    padding: 15px 50px;
+    display: none;
+    animation-name: animate;
+    animation-duration: .5s;
+}
+@keyframes animate {
+    from {
+        translate:  -100px;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        translate:   0px;
+    }
+    
+}
+h2
+{
+    font-size: 4em ;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; 
+    ;   
+    
+}
+.text{
+    font-weight: 100;
+    font-size: 1.5em
+}
+.reset
+{
+    padding: 15px 15px ;
+    color: #687672;
+    background: #fff;
+    border: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase ;
+    cursor: pointer;
+    font-weight: 600;
+    /* border raduis */
+
+}
+.reset:focus
+{
+    color: #fff;
+    background: #2e423d;
+    
+}
+
+.game
+{
+    width: 440px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.item
+{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: #fff;
+    transition: 0.25s;
+    transform: rotateY(180deg);
+    border-radius: 7%;
+    font-family:'Ubuntu',sans-serif ;
+}
+.item.boxOpen
+{
+    transform: rotateY(0deg);
+}
+.item::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #5e5b5e;
+    
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    border-radius: 7%;
+    backface-visibility: hidden;
+}
+.boxOpen:after , .boxMatch:after
+{
+    transform: rotateY(180deg );
+}
+
+
+
